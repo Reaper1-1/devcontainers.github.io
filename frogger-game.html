@@ -30,7 +30,9 @@ const levelThemes = [
     road: '#252540',
     safe: '#222c37',
     line: '#0078D4',
-    desc: 'Setting up your dev container...'
+    desc: 'Setting up your dev container...',
+    joke: 'Why did the dev container break up with the old environment?',
+    punchline: 'Because it needed more space!'
   },
   {
     name: 'Install',
@@ -38,7 +40,9 @@ const levelThemes = [
     road: '#2a4025',
     safe: '#234022',
     line: '#4CAF50',
-    desc: 'Installing dependencies...'
+    desc: 'Installing dependencies...',
+    joke: 'Why do dev containers love npm install?',
+    punchline: 'Because they like to keep their packages contained!'
   },
   {
     name: 'Build',
@@ -46,7 +50,9 @@ const levelThemes = [
     road: '#402525',
     safe: '#402222',
     line: '#FF9800',
-    desc: 'Building your project...'
+    desc: 'Building your project...',
+    joke: 'Why did the build step get invited to the party?',
+    punchline: 'Because it always brings everything together!'
   },
   {
     name: 'Test',
@@ -54,7 +60,9 @@ const levelThemes = [
     road: '#254040',
     safe: '#224040',
     line: '#00BCD4',
-    desc: 'Running tests...'
+    desc: 'Running tests...',
+    joke: 'Why did the test runner sit in the dev container?',
+    punchline: 'To make sure everything was isolated!'
   },
   {
     name: 'Deploy',
@@ -62,7 +70,9 @@ const levelThemes = [
     road: '#404025',
     safe: '#404022',
     line: '#FFC107',
-    desc: 'Deploying to production!'
+    desc: 'Deploying to production!',
+    joke: 'Why was the dev container so calm during deployment?',
+    punchline: 'Because it knew it could always roll back!'
   }
 ];
 
@@ -219,14 +229,17 @@ function checkCollision() {
 }
 
 let advancingLevel = false;
+let showPunchline = false;
 function checkWin() {
   if (frog.y === 0 && !advancingLevel) {
     if (level < maxLevel) {
       advancingLevel = true;
+      showPunchline = true;
       setTimeout(() => {
+        showPunchline = false;
         resetGame(level + 1);
         advancingLevel = false;
-      }, 800);
+      }, 1500); // Show punchline for 1.5s
     } else {
       win = true;
       gameOver = true;
@@ -280,13 +293,25 @@ function draw() {
   // Draw theme description
   ctx.font = 'italic 14px sans-serif';
   ctx.fillText(levelTheme.desc, 48, 54);
+  // Draw dev container joke setup in the empty space within the game board (row 2)
+  ctx.font = 'bold 15px sans-serif';
+  ctx.fillStyle = '#FFD700';
+  ctx.textAlign = 'center';
+  // Place the joke in the center of the second row (not at the very top)
+  ctx.fillText(levelTheme.joke, canvas.width / 2, grid + grid / 2);
   drawFrog();
   drawCars();
-  if (gameOver) {
+  if (gameOver || showPunchline) {
     ctx.fillStyle = win ? 'lime' : 'red';
     ctx.font = 'bold 32px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText(win ? 'You Win!' : 'Game Over', canvas.width / 2, canvas.height / 2);
+    ctx.fillText(win ? 'You Win!' : (showPunchline ? 'Level Complete!' : 'Game Over'), canvas.width / 2, canvas.height / 2);
+    // Show the punchline below the win/level complete message
+    if (win || showPunchline) {
+      ctx.font = 'bold 18px sans-serif';
+      ctx.fillStyle = '#FFD700';
+      ctx.fillText(levelTheme.punchline, canvas.width / 2, canvas.height / 2 + 40);
+    }
   }
 }
 
