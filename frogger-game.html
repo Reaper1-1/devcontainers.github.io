@@ -293,12 +293,33 @@ function draw() {
   // Draw theme description
   ctx.font = 'italic 14px sans-serif';
   ctx.fillText(levelTheme.desc, 48, 54);
-  // Draw dev container joke setup in the empty space within the game board (row 2)
+  // Draw dev container joke setup in the empty space further down the game board (row 3)
   ctx.font = 'bold 15px sans-serif';
   ctx.fillStyle = '#FFD700';
   ctx.textAlign = 'center';
-  // Place the joke in the center of the second row (not at the very top)
-  ctx.fillText(levelTheme.joke, canvas.width / 2, grid + grid / 2);
+  // Word-wrap the joke setup if it's too long for the canvas
+  const joke = levelTheme.joke;
+  const maxWidth = canvas.width - 48; // leave padding on both sides
+  const words = joke.split(' ');
+  let line = '';
+  let lines = [];
+  for (let n = 0; n < words.length; n++) {
+    let testLine = line + words[n] + ' ';
+    let metrics = ctx.measureText(testLine);
+    let testWidth = metrics.width;
+    if (testWidth > maxWidth && n > 0) {
+      lines.push(line.trim());
+      line = words[n] + ' ';
+    } else {
+      line = testLine;
+    }
+  }
+  lines.push(line.trim());
+  // Draw each line, vertically centered in row 3 (further down)
+  const baseY = grid * 2 + grid / 2 - ((lines.length - 1) * 12);
+  for (let i = 0; i < lines.length; i++) {
+    ctx.fillText(lines[i], canvas.width / 2, baseY + i * 24);
+  }
   drawFrog();
   drawCars();
   if (gameOver || showPunchline) {
