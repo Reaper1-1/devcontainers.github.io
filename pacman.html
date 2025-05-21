@@ -1,0 +1,141 @@
+---
+layout: singlePage
+title: Pacman
+sectionid: pacman
+---
+
+<!-- Search bar -->
+<input type="text" id="searchInput" placeholder="Search" style="margin-bottom: 20px; width: 100%; max-width: 400px;">
+
+<!-- Pacman Game Styles and Script -->
+<style>
+#pacmanCanvas {
+  background: #000;
+  display: block;
+  margin: 0 auto 20px auto;
+  border: 2px solid #FFD700;
+}
+.pacman-link {
+  color: #FFD700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+</style>
+
+<a href="#pacman-game" class="pacman-link"><h1 id="pacman-game">Pacman Game</h1></a>
+<canvas id="pacmanCanvas" width="448" height="496"></canvas>
+<p>Use arrow keys to move Pacman. Eat all the dots!</p>
+<script>
+// Simple Pacman game (mini version)
+const canvas = document.getElementById('pacmanCanvas');
+const ctx = canvas.getContext('2d');
+const tileSize = 16;
+const map = [
+  '############################',
+  '#............##............#',
+  '#.####.#####.##.#####.####.#',
+  '#o####.#####.##.#####.####o#',
+  '#.####.#####.##.#####.####.#',
+  '#..........................#',
+  '#.####.##.########.##.####.#',
+  '#.####.##.########.##.####.#',
+  '#......##....##....##......#',
+  '######.##### ## #####.######',
+  '######.##### ## #####.######',
+  '######.##          ##.######',
+  '######.## ######## ##.######',
+  '######.## ######## ##.######',
+  '#............##............#',
+  '#.####.#####.##.#####.####.#',
+  '#.####.#####.##.#####.####.#',
+  '#o..##................##..o#',
+  '###.##.##.########.##.##.###',
+  '###.##.##.########.##.##.###',
+  '#......##....##....##......#',
+  '#.##########.##.##########.#',
+  '#.##########.##.##########.#',
+  '#..........................#',
+  '############################'
+];
+let pacman = { x: 14, y: 17, dx: 0, dy: 0, nextDx: 0, nextDy: 0 };
+let score = 0;
+let dots = 0;
+for (let row of map) for (let c of row) if (c === '.' || c === 'o') dots++;
+function drawMap() {
+  for (let y = 0; y < map.length; y++) {
+    for (let x = 0; x < map[y].length; x++) {
+      if (map[y][x] === '#') {
+        ctx.fillStyle = '#2222FF';
+        ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
+      } else if (map[y][x] === '.' || map[y][x] === 'o') {
+        ctx.fillStyle = '#FFD700';
+        ctx.beginPath();
+        ctx.arc(x * tileSize + tileSize/2, y * tileSize + tileSize/2, map[y][x] === 'o' ? 4 : 2, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+    }
+  }
+}
+function drawPacman() {
+  ctx.fillStyle = '#FFFF00';
+  ctx.beginPath();
+  ctx.arc(pacman.x * tileSize + tileSize/2, pacman.y * tileSize + tileSize/2, tileSize/2-1, 0.25 * Math.PI, 1.75 * Math.PI, false);
+  ctx.lineTo(pacman.x * tileSize + tileSize/2, pacman.y * tileSize + tileSize/2);
+  ctx.fill();
+}
+function movePacman() {
+  // Try to turn if possible
+  if (canMove(pacman.x + pacman.nextDx, pacman.y + pacman.nextDy)) {
+    pacman.dx = pacman.nextDx;
+    pacman.dy = pacman.nextDy;
+  }
+  // Move if possible
+  if (canMove(pacman.x + pacman.dx, pacman.y + pacman.dy)) {
+    pacman.x += pacman.dx;
+    pacman.y += pacman.dy;
+  }
+  // Wrap
+  if (pacman.x < 0) pacman.x = map[0].length - 1;
+  if (pacman.x >= map[0].length) pacman.x = 0;
+}
+function canMove(x, y) {
+  return map[y] && map[y][x] && map[y][x] !== '#';
+}
+function eatDot() {
+  let c = map[pacman.y][pacman.x];
+  if (c === '.' || c === 'o') {
+    map[pacman.y] = map[pacman.y].substring(0, pacman.x) + ' ' + map[pacman.y].substring(pacman.x + 1);
+    score++;
+  }
+}
+function drawScore() {
+  ctx.fillStyle = '#FFF';
+  ctx.font = '16px Arial';
+  ctx.fillText('Score: ' + score, 10, canvas.height - 10);
+}
+function gameLoop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawMap();
+  movePacman();
+  eatDot();
+  drawPacman();
+  drawScore();
+  if (score >= dots) {
+    ctx.fillStyle = '#0F0';
+    ctx.font = '32px Arial';
+    ctx.fillText('You Win!', canvas.width/2 - 60, canvas.height/2);
+    return;
+  }
+  requestAnimationFrame(gameLoop);
+}
+document.addEventListener('keydown', e => {
+  if (["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.key)) {
+    e.preventDefault();
+    if (e.key === 'ArrowUp') { pacman.nextDx = 0; pacman.nextDy = -1; }
+    if (e.key === 'ArrowDown') { pacman.nextDx = 0; pacman.nextDy = 1; }
+    if (e.key === 'ArrowLeft') { pacman.nextDx = -1; pacman.nextDy = 0; }
+    if (e.key === 'ArrowRight') { pacman.nextDx = 1; pacman.nextDy = 0; }
+  }
+});
+gameLoop();
+</script>
