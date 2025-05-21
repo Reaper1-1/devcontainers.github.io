@@ -20,11 +20,29 @@ sectionid: pacman
   text-decoration: underline;
   cursor: pointer;
 }
+.pacman-button {
+  background-color: #25d6a2;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  margin: 10px auto;
+  cursor: pointer;
+  display: block;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.pacman-button:hover {
+  background-color: #1eb589;
+}
 </style>
 
 <a href="#pacman-game" class="pacman-link"><h1 id="pacman-game">Pacman Game</h1></a>
 <canvas id="pacmanCanvas" width="896" height="992"></canvas>
 <p>Use arrow keys to move Pacman. Collect all the whale icons while avoiding the monsters.</p>
+<button id="restartButton" class="pacman-button">Restart Game</button>
 <script>
 // Larger Pacman game (dev container themed, fewer collectibles, bigger whales)
 const canvas = document.getElementById('pacmanCanvas');
@@ -32,7 +50,7 @@ const ctx = canvas.getContext('2d');
 const tileSize = 32;
 const MOVE_INTERVAL = 80; // ms, decrease for slightly faster speed
 // Fewer collectibles: remove about half the dots
-const map = [
+let map = [
   '############################',
   '#      ....##....      ....#',
   '#.####.#####.##.#####.####.#',
@@ -306,7 +324,7 @@ function drawGameOver() {
   
   ctx.fillStyle = '#25d6a2';
   ctx.font = '28px Arial';
-  ctx.fillText('Press SPACE to restart', canvas.width/2, canvas.height/2 + 50);
+  ctx.fillText('Press R to restart', canvas.width/2, canvas.height/2 + 50);
   
   ctx.textAlign = 'left'; // Reset text align
 }
@@ -348,6 +366,36 @@ function resetGame() {
   // Reset monsters to original positions
   globalThis.monsterStates = monsters.map(m => ({...m, dx: 0, dy: 0}));
   
+  // Ensure no monsters are too close to Pacman at start
+  for (const monster of globalThis.monsterStates) {
+    const distX = Math.abs(monster.x - pacman.x);
+    const distY = Math.abs(monster.y - pacman.y);
+    
+    // If monster is within 3 tiles of Pacman, move it to a different position
+    if (distX + distY < 3) {
+      // Find alternative positions that are valid paths and not close to Pacman
+      const alternatives = [];
+      for (let y = 1; y < map.length - 1; y++) {
+        for (let x = 1; x < map[0].length - 1; x++) {
+          if (map[y][x] !== '#') {
+            const newDistX = Math.abs(x - pacman.x);
+            const newDistY = Math.abs(y - pacman.y);
+            if (newDistX + distY >= 5) {
+              alternatives.push({x, y});
+            }
+          }
+        }
+      }
+      
+      if (alternatives.length > 0) {
+        // Choose a random alternative position
+        const newPos = alternatives[Math.floor(Math.random() * alternatives.length)];
+        monster.x = newPos.x;
+        monster.y = newPos.y;
+      }
+    }
+  }
+  
   // Reset game state
   score = 0;
   lives = 3;
@@ -360,15 +408,19 @@ function resetGame() {
 }
 
 document.addEventListener('keydown', e => {
+  // Prevent scrolling for both arrow keys and spacebar
+  if (e.key === ' ' || e.code === 'Space' || ["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.key)) {
+    e.preventDefault();
+  }
+  
   if (gameOver) {
-    if (e.key === ' ' || e.code === 'Space') {
+    if (e.key === ' ' || e.code === 'Space' || e.key === 'r' || e.key === 'R') {
       resetGame();
     }
     return;
   }
   
   if (["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.key)) {
-    e.preventDefault();
     let moved = false;
     if (e.key === 'ArrowUp') { pacman.nextDx = 0; pacman.nextDy = -1; moved = true; }
     if (e.key === 'ArrowDown') { pacman.nextDx = 0; pacman.nextDy = 1; moved = true; }
@@ -421,7 +473,7 @@ function gameLoop(timestamp) {
     ctx.textAlign = 'center';
     ctx.fillText('All Features Collected!', canvas.width/2, canvas.height/2);
     ctx.font = '28px Arial';
-    ctx.fillText('Press SPACE to play again', canvas.width/2, canvas.height/2 + 50);
+    ctx.fillText('Press R to play again', canvas.width/2, canvas.height/2 + 50);
     gameOver = true;
     ctx.textAlign = 'left';
     return;
@@ -431,6 +483,18 @@ function gameLoop(timestamp) {
 }
 
 requestAnimationFrame(gameLoop);
+
+// Add event listener for the restart button
+document.getElementById('restartButton').addEventListener('click', function() {
+  if (gameOver) {
+    resetGame();
+  } else {
+    // If the game is still in progress, ask for confirmation
+    if (confirm('Are you sure you want to restart the game?')) {
+      resetGame();
+    }
+  }
+});
 </script>
 
 <!-- Monster Key -->
