@@ -1093,6 +1093,11 @@
   repository: https://github.com/schnellerhase/devcontainer-fenics
   ociReference: ghcr.io/schnellerhase/devcontainer-fenics/fenics
   ociReference: ghcr.io/ryanlua/templates/roblox
+- name: Devcontainers templates by jhoareaumarion
+  maintainer: jhoareaumarion
+  contact: https://github.com/jhoareaumarion/devcontainers/issues
+  repository: https://github.com/jhoareaumarion/devcontainers
+  ociReference: ghcr.io/jhoareaumarion/devcontainers
 - name: devcontainer features by TakahashiNguyen
   maintainer: ANh Nguyễn (TakahashiNguyen)
   contact: https://github.com/TakahashiNguyen/devcontainer-features/issues
