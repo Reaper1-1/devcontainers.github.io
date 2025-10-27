@@ -1081,4 +1081,14 @@
   maintainer: Ryan Luu
   contact: https://github.com/RyanLua/templates/issues
   repository: https://github.com/RyanLua/templates
-  ociReference: ghcr.io/ryanlua/templates
+  ociReference: ghcr.io/ryanlua/templates/roblox
+- name: BTP Dev Container Features
+  maintainer: Navin Krishnan
+  contact: https://github.com/navinkrishnan/devcontainer-features-btp/issues
+  repository: https://github.com/navinkrishnan/devcontainer-features-btp
+  ociReference: ghcr.io/navinkrishnan/devcontainer-features-btp
+- name: BTP CAP (Cloud Application Programming) Model Dev Templates
+  maintainer: Navin Krishnan
+  contact: https://github.com/navinkrishnan/devcontainer-templates-btp/issues
+  repository: https://github.com/navinkrishnan/devcontainer-templates-btp
+  ociReference: ghcr.io/navinkrishnan/devcontainer-templates-btp
