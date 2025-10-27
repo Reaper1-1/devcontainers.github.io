@@ -1093,6 +1093,11 @@
   repository: https://github.com/schnellerhase/devcontainer-fenics
   ociReference: ghcr.io/schnellerhase/devcontainer-fenics/fenics
   ociReference: ghcr.io/ryanlua/templates/roblox
+- name: AcademicDocker template (R, Stata, LaTeX)
+  maintainer: Romain Ferrali
+  contact: https://github.com/rferrali/devcontainer-templates/issues
+  repository: https://github.com/rferrali/devcontainer-templates
+  ociReference: ghcr.io/rferrali/devcontainer-templates
 - name: Devcontainers templates by jhoareaumarion
   maintainer: jhoareaumarion
   contact: https://github.com/jhoareaumarion/devcontainers/issues
