@@ -1082,6 +1082,11 @@
   contact: https://github.com/RyanLua/templates/issues
   repository: https://github.com/RyanLua/templates
   ociReference: ghcr.io/ryanlua/templates
+- name: Dev Container Features by Joe Bowbeer
+  maintainer: Joe Bowbeer
+  contact: https://github.com/joebowbeer/devcontainers-features/issues
+  repository: https://github.com/joebowbeer/devcontainers-features
+  ociReference: ghcr.io/joebowbeer/devcontainers-features
 - name: FEniCS
   maintainer: schnellerhase
   contact: https://github.com/schnellerhase/devcontainer-fenics/issues
