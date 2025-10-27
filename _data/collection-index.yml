@@ -1081,6 +1081,12 @@
   maintainer: Ryan Luu
   contact: https://github.com/RyanLua/templates/issues
   repository: https://github.com/RyanLua/templates
+  ociReference: ghcr.io/ryanlua/templates
+- name: FEniCS
+  maintainer: schnellerhase
+  contact: https://github.com/schnellerhase/devcontainer-fenics/issues
+  repository: https://github.com/schnellerhase/devcontainer-fenics
+  ociReference: ghcr.io/schnellerhase/devcontainer-fenics/fenics
   ociReference: ghcr.io/ryanlua/templates/roblox
 - name: devcontainer features by TakahashiNguyen
   maintainer: ANh Nguyễn (TakahashiNguyen)
