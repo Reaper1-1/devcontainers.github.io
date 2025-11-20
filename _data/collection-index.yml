@@ -1034,6 +1034,11 @@
   contact: https://github.com/RouL/devcontainer-features/issues
   repository: https://github.com/RouL/devcontainer-features
   ociReference: ghcr.io/roul/devcontainer-features
+- name: Devcontainer for Cargo lambda
+  maintainer: Han Sen
+  contact: https://github.com/tokidoki11/devcontainer-feature/issues
+  repository: https://github.com/tokidoki11/devcontainer-feature
+  ociReference: ghcr.io/tokidoki11/devcontainer-feature/cargo-lambda
 - name: devcontainer features by irfansofyana
   maintainer: irfansofyana
   contact: https://github.com/irfansofyana/devcontainer-features/issues
