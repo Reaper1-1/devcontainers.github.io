@@ -1165,6 +1165,11 @@
   repository: https://github.com/schnellerhase/devcontainer-fenics
   ociReference: ghcr.io/schnellerhase/devcontainer-fenics/fenics
   ociReference: ghcr.io/ryanlua/templates/roblox
+- name: Matt Mazzola Dev Containers
+  maintainer: mattmazzola
+  contact: https://github.com/mattmazzola/devcontainers/issues
+  repository: https://github.com/mattmazzola/devcontainers
+  ociReference: ghcr.io/mattmazzola/devcontainers
 - name: W&B Catnip
   maintainer: Weights and Biases
   contact: https://github.com/wandb/catnip/issues
