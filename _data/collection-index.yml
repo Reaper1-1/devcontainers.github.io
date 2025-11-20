@@ -967,6 +967,11 @@
   contact: https://github.com/davzucky/devcontainers-features-wolfi/issues
   repository: https://github.com/davzucky/devcontainers-features-wolfi
   ociReference: ghcr.io/davzucky/devcontainers-features-wolfi  
+- name: devcontainer features for ubuntugis
+  maintainer: Conner Shoop
+  contact: https://github.com/connershoop/devcontainer-feature-ubuntugis/issues
+  repository: https://github.com/connershoop/devcontainer-feature-ubuntugis
+  ociReference: ghcr.io/connershoop/devcontainer-feature-ubuntugis
 - name: Nefarious Development Containers
   maintainer: NickChecan
   contact: https://github.com/The-Nefarious-Developer/devcontainer-templates/issues
