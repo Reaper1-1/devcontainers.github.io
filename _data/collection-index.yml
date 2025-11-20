@@ -1083,6 +1083,11 @@
   contact: https://github.com/jajera/features/issues
   repository: https://github.com/jajera/features
   ociReference: ghcr.io/jajera/features
+- name: AWS Lambda Dev Container
+  maintainer: Yuji Masaoka
+  contact: https://github.com/ymasaoka/devcontainer-templates/issues
+  repository: https://github.com/ymasaoka/devcontainer-templates
+  ociReference: ghcr.io/ymasaoka/devcontainer-templates
 - name: MrSimonEmms Dev Container Features
   maintainer: MrSimonEmms
   contact: https://github.com/mrsimonemms/devcontainers/issues
