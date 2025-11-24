@@ -1164,7 +1164,6 @@
   contact: https://github.com/schnellerhase/devcontainer-fenics/issues
   repository: https://github.com/schnellerhase/devcontainer-fenics
   ociReference: ghcr.io/schnellerhase/devcontainer-fenics/fenics
-  ociReference: ghcr.io/ryanlua/templates/roblox
 - name: Dev Container Templates by pirpedro
   maintainer: Pedro Rodrigues
   contact: https://github.com/pirpedro/devcontainers/issues
@@ -1250,3 +1249,8 @@
   contact: https://github.com/42atomys/devcontainers-features/issues
   repository: https://github.com/42atomys/devcontainers-features
   ociReference: ghcr.io/42atomys/devcontainers-features
+- name: PairSpaces
+  maintainer: PairSpaces by Interaction, LLC
+  contact: https://github.com/pairspaces/devcontainers/issues
+  repository: https://github.com/pairspaces/devcontainers
+  ociReference: ghcr.io/pairspaces/devcontainers/pairspaces
