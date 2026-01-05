@@ -1230,6 +1230,11 @@
   contact: https://github.com/navinkrishnan/devcontainer-templates-btp/issues
   repository: https://github.com/navinkrishnan/devcontainer-templates-btp
   ociReference: ghcr.io/navinkrishnan/devcontainer-templates-btp
+- name: Gemini CLI (via npm)
+  maintainer: siri404
+  contact: https://github.com/siri404/devcontainer-ai-features/issues
+  repository: https://github.com/siri404/devcontainer-ai-features
+  ociReference: ghcr.io/siri404/devcontainer-ai-features
 - name: EdgeActions Dev Container Templates
   maintainer: Azure EdgeActions Developer Experiences Team
   contact: https://github.com/Azure/edgeactions-devcontainers/issues
