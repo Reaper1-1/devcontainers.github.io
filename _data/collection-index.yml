@@ -773,6 +773,11 @@
   contact: https://github.com/rafaph/devcontainer-features/issues
   repository: https://github.com/rafaph/devcontainer-features
   ociReference: ghcr.io/rafaph/devcontainer-features
+- name: Dev Container Features by weslyg
+  maintainer: weslyg
+  contact: https://github.com/weslyg/features/issues
+  repository:  https://github.com/weslyg/features
+  ociReference: ghcr.io/weslyg/features
 - name: SPFx Dev Container
   maintainer: Troy
   contact: https://github.com/tpalacino/SPFx-dev-container/issues
