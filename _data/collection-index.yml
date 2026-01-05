@@ -1280,6 +1280,11 @@
   contact: https://github.com/pairspaces/devcontainers/issues
   repository: https://github.com/pairspaces/devcontainers
   ociReference: ghcr.io/pairspaces/devcontainers/pairspaces
+- name: Rails Dev Container Features
+  maintainer: Rails Core Team
+  contact: https://github.com/rails/devcontainer/issues
+  repository: https://github.com/rails/devcontainer
+  ociReference: ghcr.io/rails/devcontainer/features
 - name: Dev Container Features by Niklas
   maintainer: NLstn
   contact: https://github.com/NLstn/devcontainer-features/issues
