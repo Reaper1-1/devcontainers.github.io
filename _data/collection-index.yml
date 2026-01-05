@@ -1270,6 +1270,11 @@
   contact: https://github.com/42atomys/devcontainers-features/issues
   repository: https://github.com/42atomys/devcontainers-features
   ociReference: ghcr.io/42atomys/devcontainers-features
+- name: NeoVim (from prebuilt binaries)
+  maintainer: Marcos Bolaños
+  contact: https://github.com/marcosbolanos/devcontainer-features/issues
+  repository: https://github.com/marcosbolanos/devcontainer-features
+  ociReference: ghcr.io/marcosbolanos/devcontainer-features
 - name: PairSpaces
   maintainer: PairSpaces by Interaction, LLC
   contact: https://github.com/pairspaces/devcontainers/issues
