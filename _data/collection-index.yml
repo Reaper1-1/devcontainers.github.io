@@ -966,7 +966,10 @@
   maintainer: David Zucker
   contact: https://github.com/davzucky/devcontainers-features-wolfi/issues
   repository: https://github.com/davzucky/devcontainers-features-wolfi
-  ociReference: ghcr.io/davzucky/devcontainers-features-wolfi
+  maintainer: eBizBase
+  contact: https://github.com/ebizbase/dev-infras/issues
+  repository: https://github.com/ebizbase/dev-infras
+  ociReference: ghcr.io/ebizbase/devcontainers-features
 - name: slang programming language
   maintainer: loag
   contact: https://github.com/Loag/slang-feature/issues
