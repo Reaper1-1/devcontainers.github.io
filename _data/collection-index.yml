@@ -1406,3 +1406,8 @@
   contact: https://github.com/esimkowitz/devcontainer-features/issues
   repository: https://github.com/esimkowitz/devcontainer-features
   ociReference: ghcr.io/esimkowitz/devcontainer-features
+- name: Dev Container Features by AlanChen
+  maintainer: alan-chen-dongsheng
+  contact: https://github.com/alan-chen-dongsheng/devcontainer-templates/issues
+  repository: https://github.com/alan-chen-dongsheng/devcontainer-templates
+  ociReference: ghcr.io/alan-chen-dongsheng/devcontainer-templates
