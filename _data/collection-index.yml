@@ -1421,3 +1421,8 @@
   contact: https://github.com/iyaki/devcontainer-templates/issues
   repository: https://github.com/iyaki/devcontainer-templates
   ociReference: ghcr.io/iyaki/devcontainer-templates
+- name: Phoenix
+  maintainer: lwrless
+  contact: https://github.com/on-my-machine-works/devcontainer-templates/issues
+  repository: https://github.com/on-my-machine-works/devcontainer-templates
+  ociReference: ghcr.io/on-my-machine-works/devcontainer-templates/phoenix
