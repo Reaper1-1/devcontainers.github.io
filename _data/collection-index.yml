@@ -1451,3 +1451,8 @@
   contact: https://github.com/thucke/devcontainer-templates/issues
   repository: https://github.com/thucke/devcontainer-templates
   ociReference: ghcr.io/thucke/devcontainer-templates
+- name: wcgomes
+  maintainer: wcgomes
+  contact: https://github.com/wcgomes/devcontainer-features/issues
+  repository: https://github.com/wcgomes/devcontainer-features
+  ociReference: ghcr.io/wcgomes/devcontainer-features
