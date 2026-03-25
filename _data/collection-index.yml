@@ -1436,3 +1436,8 @@
   contact: https://github.com/on-my-machine-works/devcontainer-templates/issues
   repository: https://github.com/on-my-machine-works/devcontainer-templates
   ociReference: ghcr.io/on-my-machine-works/devcontainer-templates/phoenix
+- name: Dev Container Features (Riccardo Bravin)
+  maintainer: Riccardo Bravin
+  contact: https://github.com/RiccardoBravin/devcontainer-features/issues
+  repository: https://github.com/RiccardoBravin/devcontainer-features
+  ociReference: ghcr.io/riccardobravin/devcontainer-features
