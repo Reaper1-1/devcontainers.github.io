@@ -1471,3 +1471,8 @@
   contact: https://github.com/agardnerIT/devcontainer-feature-dtctl/issues
   repository: https://github.com/agardnerIT/devcontainer-feature-dtctl
   ociReferences: ghcr.io/agardnerit/devcontainer-feature-dtctl
+- name: Devcontainer Features by nkdui
+  maintainer: nkdui
+  contact: https://github.com/nkdui/devcontainer-features/issues
+  repository: https://github.com/nkdui/devcontainer-features
+  ociReference: ghcr.io/nkdui/devcontainer-features
