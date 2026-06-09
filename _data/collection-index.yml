@@ -1531,3 +1531,8 @@
   contact: https://github.com/SrzStephen/devcontainer-features/issues
   repository: https://github.com/SrzStephen/devcontainer-features
   ociReference: ghcr.io/srzstephen/devcontainer-features
+- name: Dev Container Extras by XavierBeheydt
+  maintainer: XavierBeheydt
+  contact: https://github.com/XavierBeheydt/devcontainer-extras/issues
+  repository: https://github.com/XavierBeheydt/devcontainer-extras
+  ociReference: ghcr.io/xavierbeheydt/devcontainer-extras
