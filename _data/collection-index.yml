@@ -1526,3 +1526,8 @@
   contact: https://github.com/kuju63/devcontainer-features/issues
   repository: https://github.com/kuju63/devcontainer-features
   ociReference: ghcr.io/kuju63/devcontainer-features
+- name: Devcontainer Features by SrzStephen
+  maintainer: Stephen Mott
+  contact: https://github.com/SrzStephen/devcontainer-features/issues
+  repository: https://github.com/SrzStephen/devcontainer-features
+  ociReference: ghcr.io/srzstephen/devcontainer-features
