@@ -1516,3 +1516,8 @@
   contact: https://github.com/cjcrobin/devcontainer-features/issues
   repository: https://github.com/cjcrobin/devcontainer-features
   ociReference: ghcr.io/cjcrobin/devcontainer-features
+- name: Google gcloud CLI feature by aqua
+  maintainer: aqua
+  contact: https://github.com/aqua/devcontainer-gcloud/issues
+  repository: https://github.com/aqua/devcontainer-gcloud
+  ociReference: ghcr.io/aqua/devcontainer-gcloud
