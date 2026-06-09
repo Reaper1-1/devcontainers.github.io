@@ -1521,3 +1521,8 @@
   contact: https://github.com/aqua/devcontainer-gcloud/issues
   repository: https://github.com/aqua/devcontainer-gcloud
   ociReference: ghcr.io/aqua/devcontainer-gcloud
+- name: Dev Container features by kuju63
+  maintainer: kuju63
+  contact: https://github.com/kuju63/devcontainer-features/issues
+  repository: https://github.com/kuju63/devcontainer-features
+  ociReference: ghcr.io/kuju63/devcontainer-features
