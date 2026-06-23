@@ -1556,3 +1556,8 @@
   contact: https://github.com/leogallego/ansible-claude-code-devcontainer/issues
   repository: https://github.com/leogallego/ansible-claude-code-devcontainer
   ociReference: ghcr.io/leogallego/ansible-claude-code-devcontainer
+- name: Devcontainer Features by jrussellsmyth
+  maintainer: jrussellsmyth
+  contact: https://github.com/jrussellsmyth/devcontainer-features/issues
+  repository: https://github.com/jrussellsmyth/devcontainer-features
+  ociReference: ghcr.io/jrussellsmyth/devcontainer-features
